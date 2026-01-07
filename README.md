@@ -11,22 +11,7 @@
   <strong>Efficiently insert large CSV datasets into MySQL database with proper data type handling and error management.</strong>
 </p>
 
----
 
-## 📖 Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Database Schema](#database-schema)
-- [Configuration](#configuration)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
-
----
 
 ## 🎯 Overview
 
