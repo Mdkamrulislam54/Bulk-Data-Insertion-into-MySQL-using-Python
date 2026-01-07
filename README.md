@@ -127,8 +127,6 @@ conn = mysql.connector.connect(
 
 ### Step 1: Set Up MySQL Database
 
-Open **MySQL Workbench** or **MySQL Command Line** and run:
-
 ```sql
 -- Create database
 CREATE DATABASE IF NOT EXISTS RFM;
@@ -150,26 +148,23 @@ CREATE TABLE transactions (
 );
 ```
 
-### Step 2: Run the Script in VS Code
+### Step 2: Configure Database Connection
 
-1. **Open your Python file** in VS Code
-2. **Make sure MySQL is running**
-3. **Run the script:**
-   - Click the **Run button** (▷) at top-right, OR
-   - Press `Ctrl + Alt + N`, OR
-   - Open Terminal and type:
-     ```bash
-     python your_script_name.py
-     ```
+Edit `scripts/config.py`:
 
-### Step 3: Verify Data Insertion
+```python
+DB_CONFIG = {
+    "host": "127.0.0.1",
+    "user": "your_username",
+    "password": "your_password",
+    "database": "RFM"
+}
+```
 
-Check in MySQL:
+### Step 3: Run the Script
 
-```sql
-USE RFM;
-SELECT COUNT(*) FROM transactions;
-SELECT * FROM transactions LIMIT 10;
+```bash
+python scripts/bulk_insert.py
 ```
 
 ---
