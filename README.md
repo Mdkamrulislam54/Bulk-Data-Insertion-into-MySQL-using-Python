@@ -60,37 +60,65 @@ Before running this project, ensure you have:
 
 ## 🔧 Installation
 
-### Step 1: Clone the Repository
+### Method 1: Clone the Repository (Recommended)
 
 ```bash
 git clone https://github.com/Mdkamrulislam54/bulk-data-insertion-mysql.git
 cd bulk-data-insertion-mysql
 ```
 
-### Step 2: Create Virtual Environment (Recommended)
+### Method 2: Download and Setup Manually
+
+1. **Download** the repository as ZIP or create a new folder
+2. **Open VS Code** → File → Open Folder → Select your project folder
+3. **Place your CSV file** in the project folder
+
+### Step 1: Install Required Packages
+
+Open **Terminal** in VS Code (`Ctrl + ` ` or View → Terminal) and run:
 
 ```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
-
-# Linux/Mac
-python3 -m venv venv
-source venv/bin/activate
+pip install pandas mysql-connector-python
 ```
 
-### Step 3: Install Dependencies
+Or install all at once:
 
 ```bash
-pip install -r requirements.txt
+pip install pandas mysql-connector-python pymysql sqlalchemy
 ```
 
-**requirements.txt:**
+**Verify Installation:**
+```bash
+pip list
 ```
-pandas==2.1.0
-mysql-connector-python==8.1.0
-pymysql==1.1.0
-sqlalchemy==2.0.20
+
+You should see:
+- pandas
+- mysql-connector-python
+- pymysql (optional)
+- sqlalchemy (optional)
+
+### Step 2: Configure Your Script
+
+Update the file path in your Python script to match your CSV location:
+
+```python
+# If CSV is in the same folder as your script
+df = pd.read_csv("CoffeeShopSales.csv")
+
+# Or use full path
+df = pd.read_csv(r"C:\Users\Sajib\Desktop\Interactive Cares\Vs Code+Python\CoffeeShopSales.csv")
+```
+
+### Step 3: Update Database Credentials
+
+```python
+conn = mysql.connector.connect(
+    host="127.0.0.1",
+    user="root",
+    password="your_password",  # Change this!
+    database="RFM"
+)
 ```
 
 ---
